@@ -1,4 +1,4 @@
-class Solar_system
+class SolarSystem
   attr_reader :name, :planets
 
   #initialize class Solar_systen
@@ -32,7 +32,7 @@ class Planet
     @moons = planet_hash[:moons]
     @atmosphere = planet_hash[:atmosphere]
   end
-#define method to output data in neat format
+  #define method to output data in neat format
   def all_data
     puts "The planet #{@name} has a mass of #{@mass} kg and diameter of #{@diameter} km."
     puts "It is #{@distance_from_the_sun} km from the sun and has #{@moons} moons."
@@ -46,7 +46,7 @@ end
 
 
 planets = [
-  mercury = {
+  mercury_hash = {
     name: "Mercury",
     mass: 5839,
     distance_from_the_sun: 234,
@@ -54,7 +54,7 @@ planets = [
     moons: 2,
     atmosphere: "none"
   },
-  venus = {
+  venus_hash = {
     name: "Venus",
     mass: 8923,
     distance_from_the_sun: 234,
@@ -62,7 +62,7 @@ planets = [
     moons: 5,
     atmosphere: "oxygen"
   },
-  earth = {
+  earth_hash = {
     name: "Earth",
     mass: 23959,
     distance_from_the_sun: 234,
@@ -70,7 +70,7 @@ planets = [
     moons: 2,
     atmosphere: "carbon dioxide"
   },
-  mars = {
+  mars_hash = {
     name: "Mars",
     mass: 21123,
     distance_from_the_sun: 234,
@@ -78,7 +78,7 @@ planets = [
     moons: 16,
     atmosphere: "methane"
   },
-  jupiter = {
+  jupiter_hash = {
     name: "Jupiter",
     mass: 90875,
     distance_from_the_sun: 234,
@@ -86,7 +86,7 @@ planets = [
     moons: 7,
     atmosphere: "hydrogen"
   },
-  saturn = {
+  saturn_hash = {
     name: "Saturn",
     mass: 5839,
     distance_from_the_sun: 234,
@@ -94,7 +94,7 @@ planets = [
     moons: 4,
     atmosphere: "oxygeb"
   },
-  uranus = {
+  uranus_hash = {
     name: "Uranus",
     mass: 58522,
     distance_from_the_sun: 234,
@@ -102,7 +102,7 @@ planets = [
     moons: 2,
     atmosphere: "carbon dioxide"
   },
-  neptune = {
+  neptune_hash = {
     name: "Neptune",
     mass: 13518,
     distance_from_the_sun: 234,
@@ -112,24 +112,24 @@ planets = [
     }]
 
 
-    mercury = Planet.new(mercury)
-    venus = Planet.new(venus)
-    earth = Planet.new(earth)
-    mars = Planet.new(mars)
-    jupiter = Planet.new(jupiter)
-    saturn = Planet.new(saturn)
-    uranus = Planet.new(uranus)
-    neptune = Planet.new(neptune)
+    mercury = Planet.new(mercury_hash)
+    venus = Planet.new(venus_hash)
+    earth = Planet.new(earth_hash)
+    mars = Planet.new(mars_hash)
+    jupiter = Planet.new(jupiter_hash)
+    saturn = Planet.new(saturn_hash)
+    uranus = Planet.new(uranus_hash)
+    neptune = Planet.new(neptune_hash)
 
     our_planets = Array.new
     our_planets = [mercury, venus, earth, mars, jupiter, saturn, uranus, neptune]
 
     #adding multiple planets into the solar system
-    milky_way = Solar_system.new("Milky-way")
+    milky_way = SolarSystem.new("Milky-way")
     milky_way.add_planets(our_planets)
 
     #adding a single planet
-    pluto = {
+    pluto_hash = {
       name: "Pluto",
       mass: 345,
       distance_from_the_sun: 114,
@@ -139,11 +139,11 @@ planets = [
     }
 
     #create planet object pluto
-    pluto = Planet.new(pluto)
+    pluto = Planet.new(pluto_hash)
     # create array of new planet(s)
     new_planet_array = [pluto]
 
-    #add new planet(s) to Solar_system
+    #add new planet(s) to SolarSystem
     milky_way.add_planets(new_planet_array)
 
     #print a list of planets
@@ -169,7 +169,6 @@ planets = [
           continue = false
         end
       end
-
     end
     puts "We hope you learned lots!"
     puts "Come again soon!"
