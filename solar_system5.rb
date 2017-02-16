@@ -1,3 +1,4 @@
+#Kelly Souza Ada C7 - Solar System Project
 class SolarSystem
   attr_reader :name, :planets
 
